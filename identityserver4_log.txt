@@ -1,0 +1,16 @@
+2019-02-02 21:38:16.593 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-02-02 21:38:16.630 +08:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-02-02 21:38:16.633 +08:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-02-02 21:38:16.633 +08:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-02-02 21:38:16.634 +08:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-02-02 21:38:16.634 +08:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-02-02 21:38:16.634 +08:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-02-02 21:38:26.480 +08:00 [DBG] Login Url: /Account/Login
+2019-02-02 21:38:26.483 +08:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-02-02 21:38:26.483 +08:00 [DBG] Logout Url: /Account/Logout
+2019-02-02 21:38:26.483 +08:00 [DBG] ConsentUrl Url: /consent
+2019-02-02 21:38:26.483 +08:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-02-02 21:38:26.483 +08:00 [DBG] Error Url: /home/error
+2019-02-02 21:38:26.483 +08:00 [DBG] Error Id Parameter: errorId
+2019-02-02 21:38:30.651 +08:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-02-02 21:39:18.255 +08:00 [INF] AuthenticationScheme: Google was challenged.
