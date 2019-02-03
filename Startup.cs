@@ -3,6 +3,7 @@
 
 
 using is4aspid.Data;
+using is4aspid.helpers;
 using is4aspid.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace is4aspid
 {
@@ -26,7 +28,9 @@ namespace is4aspid
         }
 
         public void ConfigureServices(IServiceCollection services)
-        {
+        {   
+            var appSettings = Configuration.GetSection("AppSettings").Get<AppSettings>();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -53,14 +57,17 @@ namespace is4aspid
                 .AddInMemoryApiResources(Config.GetApis())
                 .AddInMemoryClients(Config.GetClients())
                 .AddAspNetIdentity<ApplicationUser>();
+    Console.WriteLine("value of env", Environment.IsDevelopment());
+    Console.WriteLine("value of env", Environment.IsProduction());
 
             if (Environment.IsDevelopment())
             {
+                Console.WriteLine("dev creds!!!!");
                 builder.AddDeveloperSigningCredential();
             }
             else
             {
-                throw new Exception("need to configure key material");
+                 builder.AddSigningCredential(new X509Certificate2(appSettings.CertificatePath, "brian123"));
             }
 
             services.AddAuthentication()
